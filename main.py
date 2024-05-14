@@ -49,6 +49,8 @@ def format(lists):
         if lists[i] == ']':
             flag = 1
             continue
+        if lists[i] == '%':
+            break
         if flag == 0:
             key = key + lists[i]
         else:
@@ -73,7 +75,7 @@ def makeDictionary(input, db):
         elif type(splits) == str:
             result = format(splits)
             if result != {}:
-                    output.append(result)
+                output.append(result)
         ID_dict[int(input[records_index][0])] = output
     return ID_dict
         
